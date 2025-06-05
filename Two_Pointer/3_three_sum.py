@@ -1,3 +1,4 @@
+#https://www.hellointerview.com/learn/code/two-pointers/3-sum
 '''
 Given an input integer array nums, write a function to find all unique triplets
 [nums[i], nums[j], nums[k]] such that i, j, and k are distinct indices, and 
