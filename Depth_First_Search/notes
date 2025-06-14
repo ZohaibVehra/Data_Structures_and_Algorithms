@@ -1,0 +1,34 @@
+This file is just some notes for myself, what I learned or things to think about or whatever comes to mind that feels worth writing down.
+
+For dfs the format is pretty basic
+
+Main Function
+
+    leftValue = func(root.left)
+    rightValue = func(root.right)
+
+    logic = leftValue, rightValue, root.val        could be adding, seeing max of which, or min, or w.e we need for the question
+
+    return based on logic
+
+    
+often the return and logic are in one line, eg return max(leftVale, rightValue)
+
+
+Helper functions may be needed if our logic requires more variables than the main function is designated.
+    look at Count good nodes for an example
+        we need to track the max value on the current path, but our initial func doesnt have an input var for it, so we create a helper func and recursively use that instead
+        
+
+BEST ADVICE
+As I solve these I notice a pattern in my way of thinking once I know its a DFS problem (the issue of when to know if its a DFS problem I have yet to fully grasp)
+My thought process consists of a few simple first steps
+- what info do I need to return at each interation of a node. 
+    - to answer that think: to solve the question what info do I need at any node
+        - an example for this, refer to Diameter of bin tree file. 'What info do I need to see the longest path at my current node?' -> I need to know max depth of left subtree and right subtree
+            - Therefor I now know the return of my function (or helper function in this case) must return max depth from a given node
+
+- Do i need to pass down any info as I traverse down the tree? 
+    - ex look at validate BST: for a given node I need to know if it fits within a range of values. That range does not come from bottom up (or else itd fit into the above point) but instead 
+        comes from the top down, in other words it needs to be passed down.
+    - this screams helper function with added variables
