@@ -1,0 +1,20 @@
+This file is just some notes for myself, what I learned or things to think about or whatever comes to mind that feels worth writing down.
+
+For dfs the format is pretty basic
+
+Main Function
+
+    leftValue = func(root.left)
+    rightValue = func(root.right)
+
+    logic = leftValue, rightValue, root.val        could be adding, seeing max of which, or min, or w.e we need for the question
+
+    return based on logic
+
+    
+often the return and logic are in one line, eg return max(leftVale, rightValue)
+
+
+Helper functions may be needed if our logic requires more variables than the main function is designated.
+    look at Count good nodes for an example
+        we need to track the max value on the current path, but our initial func doesnt have an input var for it, so we create a helper func and recursively use that instead
