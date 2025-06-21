@@ -1,0 +1,25 @@
+BFS is simple when you understand DFS
+
+but one very important thing I have noticed is when you are updating values while doing BFS, its best to update the value before appending to queue
+in other words instead of doing
+
+    x, y = queue.pop()
+    ret[x][y] = ...whatever
+
+    if x>0: queue.append((x+1,y))
+    if y>0: queue.append((x,y+1))
+
+its better to do
+
+    x, y = queue.pop()
+
+    if x>0:
+        ret[x+1][y] = ...whatever
+        queue.append((x+1,y))
+    if y>0:
+        ret[x][y+1] = ...whatever
+        queue.append((x,y+1))
+
+
+some issues with overwrites can occur otherwise. to be frank, I dont get why, I cant visualise it, but I've seen the results so good enough
+Key example of this issue is 01_Matrix.py
