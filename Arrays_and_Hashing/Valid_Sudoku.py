@@ -1,9 +1,9 @@
-#https://neetcode.io/problems/valid-sudoku?list=neetcode150
+#https://neetcode.io/problems/valid-sudoku?list=neetcode150 
 
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
         '''
-        add to lists of rows cols and sections
+        add to lists of rows cols and sections 
         if any have a dupe its failed
         '''
         rowsD = {}
